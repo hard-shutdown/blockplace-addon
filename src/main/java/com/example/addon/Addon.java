@@ -1,7 +1,5 @@
 package com.example.addon;
 
-import com.example.addon.commands.CommandExample;
-import com.example.addon.hud.HudExample;
 import com.example.addon.modules.ModuleExample;
 import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
@@ -14,21 +12,15 @@ import org.slf4j.Logger;
 
 public class Addon extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
-    public static final Category CATEGORY = new Category("Example");
-    public static final HudGroup HUD_GROUP = new HudGroup("Example");
+    public static final Category CATEGORY = new Category("HSAddons");
+    public static final HudGroup HUD_GROUP = new HudGroup("HSAddons");
 
     @Override
     public void onInitialize() {
-        LOG.info("Initializing Meteor Addon Template");
+        LOG.info("Initializing HSAddon BlockPlaceCrash");
 
         // Modules
         Modules.get().add(new ModuleExample());
-
-        // Commands
-        Commands.add(new CommandExample());
-
-        // HUD
-        Hud.get().register(HudExample.INFO);
     }
 
     @Override
